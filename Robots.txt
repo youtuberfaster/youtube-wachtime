@@ -1,0 +1,18 @@
+# Robots.txt file for https://youtube-video-seo.netlify.app/
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://youtube-video-seo.netlify.app/sitemap.xml
+
+# Crawl delay for gentle crawling
+Crawl-delay: 10
+
+# Allow all important files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+
+# Disallow nothing - everything is important
