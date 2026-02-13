@@ -1,10 +1,33 @@
-<!-- sitemap.xml file upload karo -->
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Main Page -->
   <url>
-    <loc>https://youtube-video-....netlify.app/</loc>
+    <loc>https://youtube-video-seo.netlify.app/</loc>
     <lastmod>2025-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Video Content -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/UfbO41pR0qY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Ayatul kursi / Ayat ul kursi with Urdu translation</video:title>
+      <video:description>Beautiful recitation of Ayatul Kursi with Urdu translation. Watch and enjoy this amazing spiritual content.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=UfbO41pR0qY</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/UfbO41pR0qY</video:player_loc>
+      <video:duration>245</video:duration>
+      <video:view_count>1250</video:view_count>
+      <video:publication_date>2025-03-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tags>
+        <video:tag>ayatul kursi</video:tag>
+        <video:tag>urdu translation</video:tag>
+        <video:tag>quran</video:tag>
+        <video:tag>islamic video</video:tag>
+      </video:tags>
+      <video:category>Religious</video:category>
+    </video:video>
   </url>
+  
 </urlset>
