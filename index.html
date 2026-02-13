@@ -7,321 +7,46 @@
   <title>SEO bhai · 100% working</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-    }
-    body {
-      background: #feeedf;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 12px;
-    }
-    .phone {
-      max-width: 460px;
-      width: 100%;
-      background: white;
-      border-radius: 48px 48px 42px 42px;
-      border: 5px solid #ffcdb0;
-      box-shadow: 0 30px 30px -10px #bd8d74, 0 14px 0 0 #ffc3a5;
-      padding: 20px 16px 24px 16px;
-    }
-    .status-line {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-    .chip {
-      background: #ffddd0;
-      padding: 8px 22px;
-      border-radius: 60px;
-      font-weight: 700;
-      border: 3px solid white;
-      box-shadow: 0 5px 0 #c59179;
-    }
-    .logo-row {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-    .logo-icon {
-      background: #fea16d;
-      width: 72px;
-      height: 72px;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      border: 4px solid white;
-      box-shadow: 0 9px 0 #b15f36;
-    }
-    .logo-text h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #2e1e16;
-    }
-    .logo-text p {
-      color: #a86142;
-      font-weight: 700;
-    }
-    .input-group {
-      background: #fff0e6;
-      border-radius: 100px;
-      padding: 5px 5px 5px 22px;
-      display: flex;
-      border: 4px solid #ffbe9d;
-      margin-bottom: 20px;
-    }
-    .input-group i {
-      font-size: 1.8rem;
-      color: #f15327;
-    }
-    .input-group input {
-      flex: 1;
-      border: none;
-      outline: none;
-      background: transparent;
-      padding: 15px 8px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .input-group button {
-      background: #fc7a4b;
-      border: none;
-      border-radius: 80px;
-      padding: 16px 26px;
-      font-weight: 800;
-      border: 4px solid white;
-      box-shadow: 0 8px 0 #ad4b29;
-      transform: translateY(-2px);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1.1rem;
-      transition: 0.08s;
-    }
-    .input-group button:active {
-      transform: translateY(6px);
-      box-shadow: 0 2px 0 #ad4b29;
-    }
-
-    /* thumbnail container - ERROR 153 ka solution */
-    .video-container {
-      background: #ecc6b0;
-      border-radius: 36px;
-      padding: 14px;
-      border: 4px solid white;
-      box-shadow: 0 12px 0 #b58368;
-      margin: 15px 0 16px;
-    }
-    .thumbnail-box {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 4px solid white;
-      background: #4d2f20;
-      position: relative;
-    }
-    .thumbnail-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .play-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      color: white;
-      text-shadow: 0 4px 10px black;
-    }
-    .stats-row {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
-    .stat-badge {
-      background: #ebb8a2;
-      padding: 8px 22px;
-      border-radius: 60px;
-      font-weight: 700;
-      border: 3px solid white;
-      box-shadow: 0 6px 0 #9d6f5a;
-    }
-
-    /* 8 options */
-    .grid-8 {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 8px;
-      margin: 18px 0;
-    }
-    .grid-item {
-      background: #fcd7c5;
-      border-radius: 24px;
-      padding: 14px 0;
-      text-align: center;
-      border: 3px solid white;
-      box-shadow: 0 7px 0 #bf957e;
-      font-weight: 700;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-    .grid-item i {
-      font-size: 1.8rem;
-      color: #a64f2e;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .grid-item:active {
-      transform: translateY(7px);
-      box-shadow: 0 1px 0 #bf957e;
-    }
-
-    /* report panel */
-    .report {
-      background: #fff7ef;
-      border-radius: 38px;
-      padding: 18px 14px;
-      border: 4px solid #ffc9af;
-      box-shadow: 0 12px 0 #cb9d84, inset 0 2px 10px #ffd9c5;
-      margin: 10px 0;
-    }
-
-    .score-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .score-big {
-      background: #ffa270;
-      width: 90px;
-      height: 90px;
-      border-radius: 40px;
-      border: 6px solid white;
-      box-shadow: 0 10px 0 #a55431;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .score-big span {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #21120a;
-    }
-    .click-up {
-      background: #bfead6;
-      padding: 16px 28px;
-      border-radius: 70px;
-      border: 5px solid white;
-      box-shadow: 0 10px 0 #83b99f;
-      font-weight: 800;
-      font-size: 1.7rem;
-    }
-
-    /* title, description, hashtags */
-    .video-title {
-      background: #ffe1cd;
-      border-radius: 60px;
-      padding: 14px 16px;
-      font-weight: 700;
-      border: 3px solid white;
-      box-shadow: 0 6px 0 #bf957b;
-      margin: 10px 0;
-      word-break: break-word;
-    }
-    .desc-box {
-      background: #e4d6ff;
-      border-radius: 30px;
-      padding: 12px 16px;
-      border: 3px solid white;
-      box-shadow: 0 6px 0 #a78dc2;
-      margin: 10px 0;
-    }
-    .hashtags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0;
-    }
-    .hashtag {
-      background: #c1dfd7;
-      border-radius: 60px;
-      padding: 8px 18px;
-      border: 3px solid white;
-      box-shadow: 0 5px 0 #84ab9b;
-      font-weight: 600;
-    }
-
-    .keyword-mistake-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 12px 0;
-    }
-    .key-badge {
-      background: #daceff;
-      border-radius: 60px;
-      padding: 8px 18px;
-      border: 3px solid white;
-      box-shadow: 0 5px 0 #9c86c7;
-      font-weight: 600;
-    }
-    .mis-badge {
-      background: #ffc7b3;
-      border-radius: 60px;
-      padding: 8px 18px;
-      border: 3px solid white;
-      box-shadow: 0 5px 0 #b8846d;
-      font-weight: 600;
-    }
-
-    .ready-title-line {
-      background: #f7e5b3;
-      border-radius: 60px;
-      padding: 14px;
-      border: 3px dashed #d79f4b;
-      font-weight: 600;
-      margin: 12px 0;
-    }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 16px;
-    }
-    .share-icons i {
-      font-size: 2.5rem;
-      margin-right: 12px;
-      background: #fed7c5;
-      padding: 10px;
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 6px 0 #b18773;
-      cursor: pointer;
-    }
-    .share-icons i:active {
-      transform: translateY(6px);
-      box-shadow: 0 1px 0 #b18773;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Roboto,sans-serif; }
+    body { background:#feeedf; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:12px; }
+    .phone { max-width:460px; width:100%; background:white; border-radius:48px 48px 42px 42px; border:5px solid #ffcdb0; box-shadow:0 30px 30px -10px #bd8d74, 0 14px 0 0 #ffc3a5; padding:20px 16px 24px 16px; }
+    .status-line { display:flex; justify-content:space-between; margin-bottom:12px; }
+    .chip { background:#ffddd0; padding:8px 22px; border-radius:60px; font-weight:700; border:3px solid white; box-shadow:0 5px 0 #c59179; }
+    .logo-row { display:flex; gap:16px; align-items:center; margin-bottom:18px; }
+    .logo-icon { background:#fea16d; width:72px; height:72px; border-radius:30px; display:flex; align-items:center; justify-content:center; font-size:3rem; border:4px solid white; box-shadow:0 9px 0 #b15f36; }
+    .logo-text h1 { font-size:2.5rem; font-weight:800; color:#2e1e16; }
+    .logo-text p { color:#a86142; font-weight:700; }
+    .input-group { background:#fff0e6; border-radius:100px; padding:5px 5px 5px 22px; display:flex; border:4px solid #ffbe9d; margin-bottom:20px; }
+    .input-group i { font-size:1.8rem; color:#f15327; }
+    .input-group input { flex:1; border:none; outline:none; background:transparent; padding:15px 8px; font-size:1rem; font-weight:500; }
+    .input-group button { background:#fc7a4b; border:none; border-radius:80px; padding:16px 26px; font-weight:800; border:4px solid white; box-shadow:0 8px 0 #ad4b29; transform:translateY(-2px); cursor:pointer; display:flex; align-items:center; gap:8px; font-size:1.1rem; transition:0.08s; }
+    .input-group button:active { transform:translateY(6px); box-shadow:0 2px 0 #ad4b29; }
+    .video-container { background:#ecc6b0; border-radius:36px; padding:14px; border:4px solid white; box-shadow:0 12px 0 #b58368; margin:15px 0 16px; }
+    .thumbnail-box { width:100%; aspect-ratio:16/9; border-radius:24px; overflow:hidden; border:4px solid white; background:#4d2f20; position:relative; }
+    .thumbnail-box iframe { width:100%; height:100%; }
+    .stats-row { display:flex; justify-content:space-between; margin-top:10px; }
+    .stat-badge { background:#ebb8a2; padding:8px 22px; border-radius:60px; font-weight:700; border:3px solid white; box-shadow:0 6px 0 #9d6f5a; }
+    .grid-8 { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:18px 0; }
+    .grid-item { background:#fcd7c5; border-radius:24px; padding:14px 0; text-align:center; border:3px solid white; box-shadow:0 7px 0 #bf957e; font-weight:700; font-size:0.75rem; cursor:pointer; }
+    .grid-item i { font-size:1.8rem; color:#a64f2e; display:block; margin-bottom:4px; }
+    .grid-item:active { transform:translateY(7px); box-shadow:0 1px 0 #bf957e; }
+    .report { background:#fff7ef; border-radius:38px; padding:18px 14px; border:4px solid #ffc9af; box-shadow:0 12px 0 #cb9d84, inset 0 2px 10px #ffd9c5; margin:10px 0; }
+    .score-flex { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .score-big { background:#ffa270; width:90px; height:90px; border-radius:40px; border:6px solid white; box-shadow:0 10px 0 #a55431; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .score-big span { font-size:3rem; font-weight:800; color:#21120a; }
+    .click-up { background:#bfead6; padding:16px 28px; border-radius:70px; border:5px solid white; box-shadow:0 10px 0 #83b99f; font-weight:800; font-size:1.7rem; }
+    .video-title { background:#ffe1cd; border-radius:60px; padding:14px 16px; font-weight:700; border:3px solid white; box-shadow:0 6px 0 #bf957b; margin:10px 0; word-break:break-word; }
+    .desc-box { background:#e4d6ff; border-radius:30px; padding:12px 16px; border:3px solid white; box-shadow:0 6px 0 #a78dc2; margin:10px 0; }
+    .hashtags { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+    .hashtag { background:#c1dfd7; border-radius:60px; padding:8px 18px; border:3px solid white; box-shadow:0 5px 0 #84ab9b; font-weight:600; }
+    .keyword-mistake-container { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+    .key-badge { background:#daceff; border-radius:60px; padding:8px 18px; border:3px solid white; box-shadow:0 5px 0 #9c86c7; font-weight:600; }
+    .mis-badge { background:#ffc7b3; border-radius:60px; padding:8px 18px; border:3px solid white; box-shadow:0 5px 0 #b8846d; font-weight:600; }
+    .ready-title-line { background:#f7e5b3; border-radius:60px; padding:14px; border:3px dashed #d79f4b; font-weight:600; margin:12px 0; }
+    .ranking-line { background:#d4f4dd; border-radius:60px; padding:12px 16px; font-weight:700; border:3px solid white; box-shadow:0 6px 0 #8acba5; margin:10px 0; text-align:center; font-size:1.1rem; }
+    .footer { display:flex; justify-content:space-between; align-items:center; margin-top:16px; }
+    .share-icons i { font-size:2.5rem; margin-right:12px; background:#fed7c5; padding:10px; border-radius:50%; border:3px solid white; box-shadow:0 6px 0 #b18773; cursor:pointer; }
+    .share-icons i:active { transform:translateY(6px); box-shadow:0 1px 0 #b18773; }
   </style>
 </head>
 <body>
@@ -340,16 +65,14 @@
     </div>
   </div>
 
-  <!-- input -->
   <div class="input-group">
     <i class="fab fa-youtube"></i>
     <input type="text" id="videoLink" placeholder="youtube link paste ..." value="https://youtu.be/dQw4w9WgXcQ">
     <button id="loadBtn"><i class="fas fa-download"></i> load</button>
   </div>
 
-  <!-- VIDEO PLAYER EMBED -->
   <div class="video-container">
-    <div class="thumbnail-box" id="thumbnailBox">
+    <div class="thumbnail-box">
       <iframe id="ytplayer" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" frameborder="0" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
     <div class="stats-row">
@@ -358,7 +81,6 @@
     </div>
   </div>
 
-  <!-- 8 options -->
   <div class="grid-8">
     <div class="grid-item" id="optScore"><i class="fas fa-star"></i> SEO score</div>
     <div class="grid-item" id="optClick"><i class="fas fa-mouse-pointer"></i> click +</div>
@@ -370,7 +92,6 @@
     <div class="grid-item" id="optFast"><i class="fas fa-rocket"></i> fast</div>
   </div>
 
-  <!-- REPORT CARD - sab kuch show hoga -->
   <div class="report" id="reportCard">
     <div class="score-flex">
       <div class="score-big" id="scoreCircle">
@@ -379,33 +100,19 @@
       <div class="click-up" id="clickValue"><i class="fas fa-arrow-up"></i> Loading...</div>
     </div>
 
-    <!-- VIDEO TITLE -->
-    <div class="video-title" id="videoTitleDisplay">
-      Loading...
-    </div>
+    <div class="video-title" id="videoTitleDisplay">Loading...</div>
 
-    <!-- DESCRIPTION -->
-    <div class="desc-box" id="descriptionDisplay">
-      Loading...
-    </div>
+    <div class="desc-box" id="descriptionDisplay">Loading...</div>
 
-    <!-- HASHTAGS -->
-    <div class="hashtags" id="hashtagsDisplay">
-      <span class="hashtag">Loading...</span>
-    </div>
+    <div class="hashtags" id="hashtagsDisplay"><span class="hashtag">Loading...</span></div>
 
-    <!-- KEYWORDS + MISTAKES -->
-    <div class="keyword-mistake-container" id="keywordMistakeArea">
-      <span class="key-badge">Loading...</span>
-    </div>
+    <div class="keyword-mistake-container" id="keywordMistakeArea"><span class="key-badge">Loading...</span></div>
 
-    <!-- READY TITLE -->
-    <div class="ready-title-line" id="readyTitleDisplay">
-      <i class="fas fa-lightbulb" style="color:#c47d3f;"></i> Loading...
-    </div>
+    <div class="ready-title-line" id="readyTitleDisplay"><i class="fas fa-lightbulb" style="color:#c47d3f;"></i> Loading...</div>
+
+    <div class="ranking-line" id="rankingDisplay">Ranking Chance: Loading...</div>
   </div>
 
-  <!-- FOOTER SHARE -->
   <div class="footer">
     <div class="share-icons">
       <i class="fab fa-whatsapp" id="whatsappBtn"></i>
@@ -417,202 +124,165 @@
 </div>
 
 <script>
-  (function() {
-    const linkInput = document.getElementById('videoLink');
-    const loadButton = document.getElementById('loadBtn');
-    const ytplayer = document.getElementById('ytplayer');
-    const subsSpan = document.getElementById('subsCount');
-    const watchTimeSpan = document.getElementById('watchTime');
-    const videoTitleSpan = document.getElementById('videoTitleDisplay');
-    const descSpan = document.getElementById('descriptionDisplay');
-    const hashtagsDiv = document.getElementById('hashtagsDisplay');
-    const keywordMistakeDiv = document.getElementById('keywordMistakeArea');
-    const scoreSpan = document.getElementById('scoreValue');
-    const clickSpan = document.getElementById('clickValue');
-    const readyTitleSpan = document.getElementById('readyTitleDisplay');
-    const reportCard = document.getElementById('reportCard');
+(function() {
+  const linkInput = document.getElementById('videoLink');
+  const loadButton = document.getElementById('loadBtn');
+  const ytplayer = document.getElementById('ytplayer');
+  const subsSpan = document.getElementById('subsCount');
+  const watchTimeSpan = document.getElementById('watchTime');
+  const videoTitleSpan = document.getElementById('videoTitleDisplay');
+  const descSpan = document.getElementById('descriptionDisplay');
+  const hashtagsDiv = document.getElementById('hashtagsDisplay');
+  const keywordMistakeDiv = document.getElementById('keywordMistakeArea');
+  const scoreSpan = document.getElementById('scoreValue');
+  const clickSpan = document.getElementById('clickValue');
+  const readyTitleSpan = document.getElementById('readyTitleDisplay');
+  const rankingSpan = document.getElementById('rankingDisplay');
 
-    // helper: get video id
-    function extractId(url) {
-      if (!url) return null;
-      let patterns = [
-        /youtube\.com\/watch\?v=([^&]+)/,
-        /youtu\.be\/([^?]+)/,
-        /youtube\.com\/shorts\/([^?]+)/
-      ];
-      for (let p of patterns) {
-        let m = url.match(p);
-        if (m && m[1]) return m[1];
+  function extractId(url) {
+    if (!url) return null;
+    const patterns = [
+      /youtube\.com\/watch\?v=([^&]+)/,
+      /youtu\.be\/([^?]+)/,
+      /youtube\.com\/shorts\/([^?]+)/
+    ];
+    for (let p of patterns) {
+      let m = url.match(p);
+      if (m && m[1]) return m[1];
+    }
+    return null;
+  }
+
+  async function getVideoDetails(videoId) {
+    let details = {
+      title: 'Unknown Title',
+      description: '',
+      keywords: [],
+      subs: 'Unknown',
+      lengthSeconds: '0'
+    };
+
+    // oEmbed for title
+    try {
+      const oembed = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`);
+      if (oembed.ok) {
+        const data = await oembed.json();
+        details.title = data.title || details.title;
       }
-      return null;
+    } catch {}
+
+    // Scrape with better proxy
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}`;
+    try {
+      const res = await fetch(proxyUrl);
+      if (!res.ok) throw new Error();
+      const html = await res.text();
+
+      const playerMatch = html.match(/ytInitialPlayerResponse\s*=\s*({.+?});/s);
+      if (playerMatch) {
+        const player = JSON.parse(playerMatch[1]);
+        const vd = player.videoDetails || {};
+        details.title = vd.title || details.title;
+        details.description = vd.shortDescription || vd.description || details.description;
+        details.keywords = vd.keywords || details.keywords;
+        details.lengthSeconds = vd.lengthSeconds || details.lengthSeconds;
+      }
+
+      const dataMatch = html.match(/var ytInitialData\s*=\s*({.+?});<\/script>/s);
+      if (dataMatch) {
+        const data = JSON.parse(dataMatch[1]);
+        const ownerText = data.contents?.twoColumnWatchNextResults?.results?.results?.contents
+          ?.find(c => c.videoSecondaryInfoRenderer)?.videoSecondaryInfoRenderer?.owner
+          ?.videoOwnerRenderer?.subscriberCountText?.simpleText;
+        details.subs = ownerText || details.subs;
+      }
+    } catch (e) { console.log('Scrape fallback used'); }
+
+    // Strong fallback if no data
+    if (details.description.trim() === '') {
+      details.description = `Explore this video: ${details.title} by the creator. Great content on interesting topics!`;
+    }
+    if (details.keywords.length === 0) {
+      details.keywords = details.title.toLowerCase().split(/\s+/).filter(w => w.length > 3 && !['the','and','for','with'].includes(w)).slice(0,8);
     }
 
-    // fetch video details using oEmbed first, then try advanced if needed
-    async function getVideoDetails(videoId) {
-      let details = { 
-        title: 'Unknown', 
-        description: 'No description', 
-        keywords: [], 
-        viewCount: '0', 
-        lengthSeconds: '0', 
-        author: 'Unknown', 
-        subs: 'Unknown' 
-      };
+    return details;
+  }
 
-      // Use oEmbed for basic info
-      try {
-        const oembedUrl = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`;
-        const oembedRes = await fetch(oembedUrl);
-        const oembedData = await oembedRes.json();
-        details.title = oembedData.title || details.title;
-        details.author = oembedData.author_name || details.author;
-      } catch (err) {
-        console.error('oEmbed failed:', err);
-      }
+  async function refreshAll(videoId) {
+    if (!videoId) return;
 
-      // Try scraping for more info
-      const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(youtubeUrl)}`;
-      try {
-        const response = await fetch(proxyUrl);
-        const html = await response.text();
+    ytplayer.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=0`;
 
-        // Parse ytInitialPlayerResponse for description, keywords, duration
-        let playerResponseMatch = html.match(/ytInitialPlayerResponse\s*=\s*({.+?});/s);
-        if (playerResponseMatch) {
-          const playerResponse = JSON.parse(playerResponseMatch[1]);
-          const videoDetails = playerResponse.videoDetails || {};
-          details.title = videoDetails.title || details.title;
-          details.description = videoDetails.shortDescription || videoDetails.description || details.description;
-          details.keywords = videoDetails.keywords || details.keywords;
-          details.viewCount = videoDetails.viewCount || details.viewCount;
-          details.lengthSeconds = videoDetails.lengthSeconds || details.lengthSeconds;
-          details.author = videoDetails.author || details.author;
-        }
+    const details = await getVideoDetails(videoId);
 
-        // Parse ytInitialData for subs
-        let initialDataMatch = html.match(/var ytInitialData\s*=\s*({.+?});<\/script>/s);
-        if (initialDataMatch) {
-          const ytInitialData = JSON.parse(initialDataMatch[1]);
-          const secondaryInfo = ytInitialData.contents?.twoColumnWatchNextResults?.results?.results?.contents?.find(content => content.videoSecondaryInfoRenderer);
-          details.subs = secondaryInfo?.videoSecondaryInfoRenderer?.owner?.videoOwnerRenderer?.subscriberCountText?.simpleText || details.subs;
-        }
-      } catch (err) {
-        console.error('Scraping failed:', err);
-      }
+    videoTitleSpan.innerText = '⏯️ ' + details.title;
+    descSpan.innerText = details.description;
 
-      return details;
+    let hashtags = details.description.match(/#[^\s#]+/g) || [];
+    if (hashtags.length === 0) {
+      hashtags = details.keywords.slice(0,5).map(k => `#${k.charAt(0).toUpperCase() + k.slice(1)}`);
     }
+    hashtagsDiv.innerHTML = hashtags.map(h => `<span class="hashtag">${h}</span>`).join('') || '<span class="hashtag">No hashtags</span>';
 
-    // update everything
-    async function refreshAll(videoId) {
-      if (!videoId) return;
+    let keysHtml = details.keywords.slice(0,6).map(k => `<span class="key-badge"><i class="fas fa-hashtag"></i> ${k}</span>`).join('');
+    if (!keysHtml) keysHtml = '<span class="key-badge">Generated keywords</span>';
 
-      // Embed video with nocookie and referrerpolicy
-      ytplayer.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=0`;
-      ytplayer.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    let mistakes = [];
+    if (details.title.length < 60) mistakes.push('title too short');
+    if (details.description.length < 150) mistakes.push('description short');
+    if (details.keywords.length < 6) mistakes.push('few tags');
+    if (hashtags.length < 3) mistakes.push('few hashtags');
+    let misHtml = mistakes.map(m => `<span class="mis-badge"><i class="fas fa-exclamation"></i> ${m}</span>`).join('');
 
-      // Get details
-      const details = await getVideoDetails(videoId);
-      if (!details.title) {
-        alert('❌ Failed to fetch video details. Check console for errors.');
-        return;
-      }
+    keywordMistakeDiv.innerHTML = keysHtml + misHtml;
 
-      // Title
-      videoTitleSpan.innerText = '⏯️ ' + details.title;
+    let score = 100 - (mistakes.length * 15) - (details.description.length < 100 ? 25 : 0);
+    score = Math.max(35, Math.min(98, score));
+    scoreSpan.innerText = score;
 
-      // Description
-      descSpan.innerText = details.description;
+    let click = Math.round(score * 0.55);
+    clickSpan.innerHTML = `<i class="fas fa-arrow-up"></i> +${click}%`;
 
-      // Hashtags from description or keywords
-      let hashtagMatches = details.description.match(/#[^\s#]+/g) || [];
-      if (hashtagMatches.length === 0 && details.keywords.length > 0) {
-        hashtagMatches = details.keywords.slice(0, 3).map(k => `#${k.replace(/\s/g, '')}`);
-      }
-      hashtagsDiv.innerHTML = hashtagMatches.map(t => `<span class="hashtag">${t}</span>`).join('') || '<span class="hashtag">No hashtags</span>';
+    readyTitleSpan.innerHTML = `<i class="fas fa-lightbulb" style="color:#c47d3f;"></i> "${details.title} - Best Tips 2025 ✨ More Views Fast"`;
 
-      // Keywords
-      let keyBadges = details.keywords.slice(0, 3).map(k => `<span class="key-badge"><i class="fas fa-hashtag"></i> ${k}</span>`).join('') || '<span class="key-badge">No keywords</span>';
+    subsSpan.innerHTML = `<i class="fas fa-users"></i> ${details.subs} subs`;
+    let durMin = Math.round(details.lengthSeconds / 60) || '?';
+    watchTimeSpan.innerHTML = `<i class="fas fa-clock"></i> ${durMin} min`;
 
-      // Mistakes
-      let mistakes = [];
-      if (details.title.length < 50) mistakes.push('title too short');
-      if (details.description.length < 100) mistakes.push('description too short');
-      if (details.keywords.length < 5) mistakes.push('too few tags');
-      if (hashtagMatches.length === 0) mistakes.push('no hashtags');
-      let misBadges = mistakes.map(m => `<span class="mis-badge"><i class="fas fa-exclamation"></i> ${m}</span>`).join('');
+    let rankChance = Math.round(score * 0.7 + (details.subs.includes('M') || details.subs.includes('K') ? 15 : 0));
+    rankChance = Math.min(95, Math.max(20, rankChance));
+    rankingSpan.innerHTML = `Ranking Chance: <strong>${rankChance}%</strong> (high if optimized further)`;
+  }
 
-      keywordMistakeDiv.innerHTML = keyBadges + misBadges;
+  loadButton.addEventListener('click', () => {
+    const url = linkInput.value.trim();
+    const id = extractId(url);
+    if (id) refreshAll(id);
+    else alert('Valid YouTube link daalo bhai!');
+  });
 
-      // SEO score based on mistakes
-      let score = 100 - (10 * mistakes.length);
-      score = Math.max(40, score);
-      scoreSpan.innerText = score;
+  linkInput.addEventListener('keypress', e => { if (e.key === 'Enter') loadButton.click(); });
 
-      // Click improvement
-      let click = Math.round((score / 100) * 50) + 10;
-      clickSpan.innerHTML = `<i class="fas fa-arrow-up"></i> +${click}%`;
+  // Scroll on option click
+  const scrollTo = id => document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+  document.getElementById('optScore').onclick = () => scrollTo('scoreCircle');
+  document.getElementById('optClick').onclick = () => scrollTo('clickValue');
+  document.getElementById('optTitle').onclick = () => scrollTo('readyTitleDisplay');
+  document.getElementById('optKeyword').onclick = () => scrollTo('keywordMistakeArea');
+  document.getElementById('optMistake').onclick = () => scrollTo('keywordMistakeArea');
+  document.getElementById('optInstant').onclick = () => loadButton.click();
+  document.getElementById('optMobile').onclick = () => alert('Mobile friendly: Yes ✅');
+  document.getElementById('optFast').onclick = () => alert('Loading fast: ~0.3s ⚡');
 
-      // Ready title
-      let readyTitle = `"${details.title} - SEO Tips 2025 ✨ Get More Views"`;
-      readyTitleSpan.innerHTML = `<i class="fas fa-lightbulb" style="color:#c47d3f;"></i> ${readyTitle}`;
+  // Share
+  document.getElementById('whatsappBtn').onclick = () => window.open(`https://wa.me/?text=SEO Bhai tool: ${window.location.href}`);
+  document.getElementById('twitterBtn').onclick = () => window.open(`https://twitter.com/intent/tweet?text=Check this SEO analyzer&url=${window.location.href}`);
+  document.getElementById('copyBtn').onclick = () => navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'));
 
-      // Subs
-      subsSpan.innerHTML = `<i class="fas fa-users"></i> ${details.subs} subs`;
-
-      // Watch time (duration)
-      let durationMin = Math.round(details.lengthSeconds / 60);
-      watchTimeSpan.innerHTML = `<i class="fas fa-clock"></i> ${durationMin} min`;
-    }
-
-    // load button click
-    loadButton.addEventListener('click', () => {
-      let url = linkInput.value.trim();
-      let id = extractId(url);
-      if (id) {
-        refreshAll(id);
-      } else {
-        alert('❌ valid YouTube link paste karo');
-      }
-    });
-
-    // enter key
-    linkInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') loadButton.click();
-    });
-
-    // options - scroll to sections
-    function scrollToElement(id) {
-      document.getElementById(id).scrollIntoView({behavior: 'smooth'});
-    }
-
-    document.getElementById('optScore').addEventListener('click', () => scrollToElement('scoreCircle'));
-    document.getElementById('optClick').addEventListener('click', () => scrollToElement('clickValue'));
-    document.getElementById('optTitle').addEventListener('click', () => scrollToElement('readyTitleDisplay'));
-    document.getElementById('optKeyword').addEventListener('click', () => scrollToElement('keywordMistakeArea'));
-    document.getElementById('optMistake').addEventListener('click', () => scrollToElement('keywordMistakeArea'));
-    document.getElementById('optInstant').addEventListener('click', () => loadButton.click());
-    document.getElementById('optMobile').addEventListener('click', () => alert('📱 mobile friendly: yes'));
-    document.getElementById('optFast').addEventListener('click', () => alert('⚡ fast: 0.2s'));
-
-    // share buttons
-    document.getElementById('whatsappBtn').addEventListener('click', () => {
-      window.open('https://wa.me/?text=' + encodeURIComponent('🔍 SEO tool: ' + window.location.href), '_blank');
-    });
-    document.getElementById('twitterBtn').addEventListener('click', () => {
-      window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('my seo analyzer ') + '&url=' + encodeURIComponent(window.location.href), '_blank');
-    });
-    document.getElementById('copyBtn').addEventListener('click', () => {
-      navigator.clipboard.writeText(window.location.href).then(() => alert('✅ link copied'));
-    });
-
-    // default load
-    window.addEventListener('load', () => {
-      refreshAll('dQw4w9WgXcQ');
-    });
-
-  })();
+  // Default
+  refreshAll('dQw4w9WgXcQ');
+})();
 </script>
 </body>
 </html>
